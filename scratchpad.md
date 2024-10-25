@@ -1,14 +1,13 @@
+## 25 October 2024
 
-## 25 August 2019
+-   Put together initial usgs streamgage filtering process to be sent to Jake - CM
 
-- It can often be useful to have a file devoted to keeping notes
-- Usually recorded in dot point form
+## To Do:
 
-## 26 August 2019
+-   Get USGS streamgages for all western states
 
-- It's not meant to be a thorough record
-- But it can be very handy for writing reminder notes during meetings
-- Usually we don't want this to be a complete documentary record
-- The key information is likely to be documented elsewhere
-- But remember that anything you write here forms part of the git history
-- Assume that it will be auditable later
+    -   NM, WY, CO, AZ, MT, ID, UT, NV, CA, WA, OR
+
+    -   Filter out sites with less than 10 years of data, only count years if they have \> 335 days of recorded data
+
+-   Download

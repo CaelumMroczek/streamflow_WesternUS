@@ -1,0 +1,24 @@
+### Load Packages
+
+```{r}
+install.packages("dataRetrieval")
+install.packages("dplyr")
+
+library(dataRetrieval)
+library(dplyr)
+```
+
+## USGS streamgages - Arizona
+
+-   Data source: USGS
+-   Timeframe: Full period of record
+
+```{r}
+AZ_streamgages<- dataRetrieval::whatNWISsites(stateCd = "AZ", #Only sites in AZ
+                            parameterCd = "00060",  #discharge
+                            service="dv") # daily value
+
+sites <- filter(AZ_streamgages, site_tp_cd %in% c('ST')) #only sites that are a Stream <- this removes most streamgages with anthropogenic impacts on the basin
+sites <- sites[,-c(1,4,7,8)] #remove unwanted columns
+colnames(sites) = c('Site_Num', 'Station_Name', 'Latitude', 'Longitude')
+```
