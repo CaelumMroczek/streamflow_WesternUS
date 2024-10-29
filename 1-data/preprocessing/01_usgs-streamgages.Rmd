@@ -22,3 +22,11 @@ sites <- filter(AZ_streamgages, site_tp_cd %in% c('ST')) #only sites that are a 
 sites <- sites[,-c(1,4,7,8)] #remove unwanted columns
 colnames(sites) = c('Site_Num', 'Station_Name', 'Latitude', 'Longitude')
 ```
+
+-   Get period of record for each gauge
+
+-   Select Years: Check number of days for each year (only keep those with \>335 days/yr)
+
+-   If that gauge has \>10 selected years, it is added to our study list
+
+-   Create dataframe for each state with USGS streamgage #, Lat, Long, Number of selected years, list of all applicable years
